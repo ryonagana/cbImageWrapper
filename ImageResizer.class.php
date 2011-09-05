@@ -131,7 +131,6 @@ class ImageResizer   {
 			
 		}
 		
-		imagedestroy($this->imgHandler->getImage());
 		
 	}
 	
@@ -160,7 +159,6 @@ class ImageResizer   {
 			
 		}
 		
-		imagedestroy($this->imgHandler->getImage());
 		
 	}
 	
