@@ -24,12 +24,12 @@ class ImageResizer   {
 	
 	
 	private $originalImg;
-	private $imgHandler;
+	public $imgHandler;
 	
 	
-	public function __construct(Image $img ){
+	public function __construct($img ){
 		
-		$this->imgHandler = $img;
+		$this->imgHandler = clone $img;
 		$this->originalImg = $this->imgHandler;
 		
 	}
@@ -124,7 +124,7 @@ class ImageResizer   {
 			break;
 			
 		default:
-			imagejpg($this->imgHandler->getImage());
+			imagejpeg($this->imgHandler->getImage());
 			break;
 			
 		
@@ -152,7 +152,7 @@ class ImageResizer   {
 			break;
 			
 		default:
-			imagejpg($this->imgHandler->getImage(), $path, $quality);
+			imagejpeg($this->imgHandler->getImage(), $path, $quality);
 			break;
 			
 		
